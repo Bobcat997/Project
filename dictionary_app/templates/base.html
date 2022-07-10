@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=z, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Słownik gwary poznańskiej</title>
+    <style type="text/css">
+        header {
+            background-image: url("https://upload.wikimedia.org/wikipedia/commons/5/5f/Stare_Miasto_w_Poznaniu.jpg");
+            background-attachment: fixed;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <nav class="border border-0 border-b flex justify-center font-medium uppercase text-gray-700 p-5 bg-white drop-shadow flex-col items-center">
+            <h3 class="text-xl">Słownik gwary poznańskiej</h3>
+            <ul class="text-sm capitalize flex flex-row">
+                <li><a href="{% url 'index' %}" class="py-2 px-4 inline-block text-gray-500 hover:text-gray-700 transition">Strona główna</a></li>
+                <li><a href="{% url 'find-world' %}" class="py-2 px-4 inline-block text-gray-500 hover:text-gray-700 transition">Słownik</a></li>
+            </ul>
+        </nav>
+        <header class="h-72">
+            <div class="w-full h-full text-white font-medium flex justify-center items-center text-5xl backdrop-blur-sm backdrop-contrast-75">
+                <span class="drop-shadow-md">{% block header_msg %}{% endblock %}</span>
+            </div>
+        </header>
+        <div id="content" class="w-1/2 mx-auto text-left py-16 text-gray-700">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>

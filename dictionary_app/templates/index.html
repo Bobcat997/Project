@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block header_msg %}
+    Gwara poznańska
+{% endblock %}
+
+{% block content %}
+    <h3 class="title text-xl mb-3 font-medium text-green-700">O projekcie</h3>
+Ten Projekt został zrobiony jako zaliczenie kursu "Podstawy programowania w Python". Stworzyłem aplikację webową, w której znajduje sie słownik gwary Poznańskiej
+    <br><br>
+
+    <div class="block my-6 flex justify-center">
+        <a href="{% url 'find-world' %}" class="inline-block py-2 px-4 bg-green-600 font-medium text-white rounded hover:bg-green-500 transition">Znajdź słowo</a>
+    </div>
+{% endblock %}
